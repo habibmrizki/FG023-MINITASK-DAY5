@@ -3,10 +3,15 @@ const account = {
   id: 2,
   username: "habib",
   password: "habibboboho",
+  changePassword: function (newPassword) {
+    this.password = newPassword;
+    return {
+      ...account,
+    };
+  },
 };
 
-const newAccount = { ...account, password: "bobohohabib" };
-console.log(newAccount);
+account.changePassword("habib123");
 
 // destructing
 const { username, password } = account;
